@@ -2,7 +2,7 @@ import React from "react";
 import { Controlled as ControlledEditor } from "react-codemirror2";
 // import { LanguageTag } from "./LanguageSelect";
 
-const CodeEditor = ({ codeString, language, themeOption, onBeforeChange, lineNumbersVisible }) => {
+const CodeEditor = ({ codeString, language, themeOption, onBeforeChange, lineNumbersVisible, screenshotBg }) => {
 	const codeMirrorOptions = {
 		lineNumbers: lineNumbersVisible,
 		highlightFormatting: true,
@@ -18,7 +18,7 @@ const CodeEditor = ({ codeString, language, themeOption, onBeforeChange, lineNum
 
 	return (
 		<div className="code-editor-wrapper">
-			<div className="code-editor-window-ui">
+			<div className="code-editor-window-ui" style={{ backgroundColor: screenshotBg.hex }}>
 				<ControlledEditor
 					value={codeString}
 					options={codeMirrorOptions}

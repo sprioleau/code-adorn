@@ -9,6 +9,11 @@ const App = () => {
 	const [language, setLanguage] = useState("javascript");
 	const [themeOption, setThemeOption] = useState("material");
 	const [lineNumbersVisible, setLineNumbersVisible] = useState(true);
+	const [screenshotBg, setScreenshotBg] = useState({ hex: "#ffcd31" });
+
+	const handleUpdateScreenshotBg = (color) => {
+		setScreenshotBg(color);
+	};
 
 	const handleChangeLanguage = (e) => {
 		setLanguage(e.target.value);
@@ -36,6 +41,8 @@ const App = () => {
 				handleChangeTheme={handleChangeTheme}
 				lineNumbersVisible={lineNumbersVisible}
 				handleChangeLineNumberVisibility={handleChangeLineNumberVisibility}
+				screenshotBg={screenshotBg}
+				handleUpdateScreenshotBg={handleUpdateScreenshotBg}
 			/>
 			<CodeEditor
 				codeString={codeString}
@@ -43,6 +50,7 @@ const App = () => {
 				themeOption={themeOption}
 				onBeforeChange={onBeforeChange}
 				lineNumbersVisible={lineNumbersVisible}
+				screenshotBg={screenshotBg}
 			/>
 			<Footer />
 		</div>
