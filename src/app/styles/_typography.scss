@@ -1,0 +1,30 @@
+@font-face {
+	font-family: "Source Sans Pro";
+	src: url("../fonts/SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+	font-family: "PT Mono";
+	src: url("../fonts/PTMono-Regular.ttf");
+	font-size: 0.8rem;
+}
+
+@font-face {
+	font-family: "Roboto Mono";
+	src: url("../fonts/RobotoMono-Regular.ttf");
+	font-size: 0.8rem;
+}
+
+@font-face {
+	font-family: "Space Mono";
+	src: url("../fonts/SpaceMono-Regular.ttf");
+	font-size: 0.8rem;
+}
+
+// Primary font
+$ff: "Source Sans Pro", Avenir, "Helvetica Neue", Arial;
+
+// Monospace fonts
+$pt: "PT Mono", monospace;
+$roboto: "Roboto Mono", monospace;
+$space: "Space Mono", monospace;

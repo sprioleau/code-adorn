@@ -1,0 +1,15 @@
+.footer {
+	@include center;
+
+	&__footer-links {
+		display: flex;
+
+		.footer-link {
+			margin-right: 2rem;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+}

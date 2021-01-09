@@ -1,0 +1,36 @@
+.code-editor-wrapper {
+	position: relative;
+
+	code {
+		font-family: $space;
+	}
+
+	.language-tag {
+		position: absolute;
+		bottom: 1rem;
+		right: 1rem;
+		font-family: monospace;
+		font-size: 0.8rem;
+		color: #fff;
+		background: rgba(0, 0, 0, 0.5);
+		padding: 0.5rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+	}
+
+	.code-editor {
+		width: 100%;
+		margin: auto;
+	}
+
+	.CodeMirror.CodeMirror-wrap {
+		// @include center;
+		width: 100%;
+		height: 100%;
+	}
+
+	.CodeMirror-code > * {
+		line-height: 1.25rem;
+		font-size: 0.9rem;
+	}
+}

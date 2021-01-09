@@ -1,0 +1,29 @@
+.hero {
+	@include center;
+	flex-direction: column;
+	margin-bottom: 3rem;
+
+	&__page-title {
+		.logo {
+			display: block;
+			width: 32rem;
+			margin-bottom: 1.5rem;
+
+			svg {
+				width: 100%;
+			}
+		}
+
+		.hidden {
+			display: none;
+		}
+	}
+
+	&__intro {
+		font-size: 1.5rem;
+		line-height: 1.2;
+		margin-bottom: 0.5rem;
+		text-align: center;
+		letter-spacing: 0.5px;
+	}
+}
