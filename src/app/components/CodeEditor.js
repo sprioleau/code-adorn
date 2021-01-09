@@ -1,10 +1,10 @@
 import React from "react";
 import { Controlled as ControlledEditor } from "react-codemirror2";
-import { LanguageTag } from "./LanguageSelect";
+// import { LanguageTag } from "./LanguageSelect";
 
-const CodeEditor = ({ codeString, language, themeOption, onBeforeChange }) => {
+const CodeEditor = ({ codeString, language, themeOption, onBeforeChange, lineNumbersVisible }) => {
 	const codeMirrorOptions = {
-		lineNumbers: true,
+		lineNumbers: lineNumbersVisible,
 		highlightFormatting: true,
 		tabSize: 2,
 		lineWrapping: true,
@@ -18,14 +18,16 @@ const CodeEditor = ({ codeString, language, themeOption, onBeforeChange }) => {
 
 	return (
 		<div className="code-editor-wrapper">
-			<ControlledEditor
-				value={codeString}
-				options={codeMirrorOptions}
-				onBeforeChange={onBeforeChange}
-				onChange={(editor, data, value) => {}}
-				className="code-editor"
-			/>
-			<LanguageTag language={language} />
+			<div className="code-editor-window-ui">
+				<ControlledEditor
+					value={codeString}
+					options={codeMirrorOptions}
+					onBeforeChange={onBeforeChange}
+					onChange={(editor, data, value) => {}}
+					className={lineNumbersVisible ? "code-editor" : "code-editor line-numbers-hidden"}
+				/>
+			</div>
+			{/* <LanguageTag language={language} /> */}
 		</div>
 	);
 };

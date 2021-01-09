@@ -5,7 +5,7 @@ const Footer = () => {
 		<footer className="footer">
 			<ul className="footer__footer-links">
 				<li className="footer-link">
-					<a href="https://github.com/sprioleau">source</a>
+					<a href="https://github.com/sprioleau/code-adorn">source</a>
 				</li>
 				<li className="footer-link">
 					<a href="https://github.com/sprioleau">about</a>

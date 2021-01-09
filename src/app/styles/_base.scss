@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 html,
 body {
 	margin: 0;
@@ -25,6 +29,6 @@ li {
 .app-container {
 	width: 60%;
 	max-width: 800px;
-	padding: 10%;
+	padding: 3%;
 	margin: 0 auto;
 }

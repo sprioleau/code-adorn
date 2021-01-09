@@ -8,6 +8,7 @@ const App = () => {
 	const [codeString, setCodeString] = useState(`console.log("Hello World!");`);
 	const [language, setLanguage] = useState("javascript");
 	const [themeOption, setThemeOption] = useState("material");
+	const [lineNumbersVisible, setLineNumbersVisible] = useState(true);
 
 	const handleChangeLanguage = (e) => {
 		setLanguage(e.target.value);
@@ -15,6 +16,10 @@ const App = () => {
 
 	const handleChangeTheme = (e) => {
 		setThemeOption(e.target.value);
+	};
+
+	const handleChangeLineNumberVisibility = () => {
+		setLineNumbersVisible(!lineNumbersVisible);
 	};
 
 	const onBeforeChange = (editor, data, value) => {
@@ -29,12 +34,15 @@ const App = () => {
 				themeOption={themeOption}
 				handleChangeLanguage={handleChangeLanguage}
 				handleChangeTheme={handleChangeTheme}
+				lineNumbersVisible={lineNumbersVisible}
+				handleChangeLineNumberVisibility={handleChangeLineNumberVisibility}
 			/>
 			<CodeEditor
 				codeString={codeString}
 				language={language}
 				themeOption={themeOption}
 				onBeforeChange={onBeforeChange}
+				lineNumbersVisible={lineNumbersVisible}
 			/>
 			<Footer />
 		</div>
