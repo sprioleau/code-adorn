@@ -33,10 +33,6 @@ const App = () => {
 
 	const FETCH_URL = "code-adorn.netlify.app";
 
-	// const fetchOptions = {
-	// 	mode: "no-cors",
-	// };
-
 	const screenshotApiOptions = [
 		// { width: "500" },
 		// { height: "500" },
