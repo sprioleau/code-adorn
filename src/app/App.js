@@ -66,6 +66,9 @@ const App = () => {
 		});
 		const json = await response.json();
 		const url = json.url;
+		console.log("response:", response);
+		console.log("json:", json);
+		console.log("url:", url);
 		setScreenshotUrl(url);
 	};
 
