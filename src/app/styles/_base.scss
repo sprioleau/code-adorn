@@ -25,10 +25,13 @@ li {
 	padding: 0;
 }
 
+a {
+	color: inherit;
+}
+
 // Layout
 .app-container {
-	width: 60%;
-	max-width: 800px;
+	width: 900px;
 	padding: 3%;
 	margin: 0 auto;
 }

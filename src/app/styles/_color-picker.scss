@@ -1,0 +1,20 @@
+.color-picker {
+	position: relative;
+
+	&__button {
+		overflow: hidden;
+		border-radius: $corner-radius;
+
+		.current-color {
+			border: 2px solid white;
+			width: 2rem;
+			height: 2rem;
+		}
+	}
+
+	.sketch-picker {
+		position: absolute;
+		right: 0;
+		z-index: 1;
+	}
+}

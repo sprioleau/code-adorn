@@ -31,9 +31,39 @@ const App = () => {
 		setCodeString(value);
 	};
 
+	const FETCH_URL = "code-adorn.netlify.app";
+
+	// const fetchOptions = {
+	// 	mode: "no-cors",
+	// };
+
+	const screenshotApiOptions = [
+		// { width: "500" },
+		// { height: "500" },
+		{ output: "image" },
+		{ fresh: "true" },
+		{ selector: ".code-editor-wrapper" },
+	];
+
+	const screenshotApiOptionsString = screenshotApiOptions
+		.map((option) => {
+			return Object.entries(option).flat().join("=");
+		})
+		.join("&");
+
+	const getScreenshot = async () => {
+		const response = await fetch(
+			`https://screenshotapi.net/api/v1/screenshot?token=${process.env.REACT_APP_SCREENSHOT_API_KEY}&url=${FETCH_URL}&${screenshotApiOptionsString}`
+			// fetchOptions
+		);
+		// const screenshot = response.data.screenshot;
+		console.log(response);
+	};
+
 	return (
 		<div className="app-container">
 			<Hero />
+			<button onClick={getScreenshot}>Get Screenshot</button>
 			<Toolbar
 				language={language}
 				themeOption={themeOption}

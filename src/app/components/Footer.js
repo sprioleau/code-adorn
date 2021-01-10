@@ -11,6 +11,9 @@ const Footer = () => {
 					<a href="https://github.com/sprioleau">about</a>
 				</li>
 			</ul>
+			<div className="byline">
+				created by <span className="credit">@sprioleau</span>👨🏾‍💻
+			</div>
 		</footer>
 	);
 };

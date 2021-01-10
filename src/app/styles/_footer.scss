@@ -1,8 +1,10 @@
 .footer {
 	@include center;
+	flex-direction: column;
 
 	&__footer-links {
 		display: flex;
+		margin-bottom: 1rem;
 
 		.footer-link {
 			margin-right: 2rem;
@@ -10,6 +12,15 @@
 			&:last-of-type {
 				margin-right: 0;
 			}
+		}
+	}
+
+	.byline {
+		font-family: $ff-light;
+		color: $gray;
+
+		.credit {
+			color: $ca-yellow;
 		}
 	}
 }

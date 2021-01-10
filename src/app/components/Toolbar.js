@@ -16,8 +16,8 @@ const Toolbar = ({
 }) => {
 	return (
 		<div className="toolbar">
-			<LanguageSelect language={language} handleLanguageChange={handleChangeLanguage} />
 			<ThemeSelect themeOption={themeOption} handleThemeChange={handleChangeTheme} />
+			<LanguageSelect language={language} handleLanguageChange={handleChangeLanguage} />
 			<span>
 				Show Line Numbers:{" "}
 				<ToggleSwitch

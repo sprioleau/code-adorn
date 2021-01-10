@@ -1,5 +1,6 @@
 .code-editor-wrapper {
 	position: relative;
+	margin-bottom: 3rem;
 
 	.language-tag {
 		position: absolute;
@@ -16,7 +17,7 @@
 
 	.code-editor-window-ui {
 		background-color: $ca-purple;
-		border-radius: $corner-radius;
+		// border-radius: $corner-radius;
 		padding: 4rem;
 	}
 
@@ -39,7 +40,6 @@
 		position: relative;
 
 		&::before {
-			// content: "Hello 👋🏾";
 			content: url("../images/window-options.svg");
 			position: absolute;
 			width: 3.5rem;

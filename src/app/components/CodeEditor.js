@@ -17,7 +17,7 @@ const CodeEditor = ({ codeString, language, themeOption, onBeforeChange, lineNum
 	};
 
 	return (
-		<div className="code-editor-wrapper">
+		<div className="code-editor-wrapper" id="screenshot-target">
 			<div className="code-editor-window-ui" style={{ backgroundColor: screenshotBg.hex }}>
 				<ControlledEditor
 					value={codeString}

@@ -4,6 +4,11 @@
 }
 
 @font-face {
+	font-family: "Source Sans Pro Light";
+	src: url("../fonts/SourceSansPro-Light.ttf");
+}
+
+@font-face {
 	font-family: "PT Mono";
 	src: url("../fonts/PTMono-Regular.ttf");
 	font-size: 0.8rem;
@@ -23,6 +28,7 @@
 
 // Primary font
 $ff: "Source Sans Pro", Avenir, "Helvetica Neue", Arial;
+$ff-light: "Source Sans Pro Light", Avenir, "Helvetica Neue", Arial;
 
 // Monospace fonts
 $pt: "PT Mono", monospace;
