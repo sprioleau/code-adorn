@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import html2canvas from "html2canvas";
 import Hero from "./components/Hero";
 import Toolbar from "./components/Toolbar";
 import CodeEditor from "./components/CodeEditor";
 import Footer from "./components/Footer";
+import codeSnippets from "./utilities/codeSnippets";
 
 const App = () => {
-	const [codeString, setCodeString] = useState(`console.log("Hello World!");`);
+	const randomIndex = Math.floor(Math.random() * codeSnippets.length);
+
+	const [codeString, setCodeString] = useState(codeSnippets[randomIndex]);
 	const [language, setLanguage] = useState("javascript");
 	const [themeOption, setThemeOption] = useState("material");
 	const [lineNumbersVisible, setLineNumbersVisible] = useState(true);
@@ -33,20 +36,35 @@ const App = () => {
 		setCodeString(value);
 	};
 
-	const createScreenshot = () => {
-		html2canvas(document.querySelector(".code-editor-window-ui")).then((canvas) => {
-			// document.querySelector(".hero").appendChild(canvas); // Add this preview to a modal
-			const canvasDataUrl = canvas.toDataURL("image/png");
-			setScreenshotDataUrl(canvasDataUrl);
-		});
+	const downloadScreenshot = () => {
+		const downloadButton = document.createElement("a");
+		downloadButton.href = screenshotDataUrl;
+		downloadButton.setAttribute("download", "code-adorn-screenshot.png");
+		downloadButton.style.display = "none";
+		document.body.appendChild(downloadButton);
+		downloadButton.click();
 	};
+
+	const createScreenshot = async (downloadImage) => {
+		const canvas = await html2canvas(document.querySelector(".code-editor-window-ui"));
+		const dataUrl = canvas.toDataURL("image/png");
+		setScreenshotDataUrl(dataUrl);
+
+		if (downloadImage) downloadScreenshot();
+	};
+
+	useEffect(() => {
+		createScreenshot();
+		// eslint-disable-next-line
+	}, []);
 
 	return (
 		<div className="app-container">
 			<Hero />
-			<button onClick={createScreenshot}>Take Screenshot</button>
+			<button onClick={() => createScreenshot(false)}>Take Screenshot</button>
+			<button onClick={() => createScreenshot(true)}>Download Screenshot</button>
 			{screenshotDataUrl !== "/" && (
-				<a id="download" download="code-adorn-screenshot.png" href={screenshotDataUrl}>
+				<a id="download" download="code-adorn-screenshot.png" style={{ display: "none" }} href={screenshotDataUrl}>
 					Download to code-adorn-screenshot.png
 				</a>
 			)}

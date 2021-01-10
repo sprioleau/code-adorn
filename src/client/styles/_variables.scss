@@ -3,8 +3,9 @@
 	--pill-radius: 3rem;
 }
 
+$white: #fff;
 $ui-bg: #160b3d;
-$ui-text: #fff;
+$ui-text: $white;
 
 $ca-purple: #3210ad;
 $ca-yellow: #ffcd31;
@@ -13,4 +14,7 @@ $ca-pink: #cd0cc7;
 
 $gray: #888;
 
+$corner-radius: 0.25rem;
+$outline-style-light: 2px solid $white;
+$outline-style-heavy: 4px solid $white;
 $corner-radius: 0.25rem;
