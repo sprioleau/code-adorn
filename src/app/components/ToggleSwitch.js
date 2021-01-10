@@ -3,7 +3,9 @@ import React from "react";
 const ToggleSwitch = ({ name, lineNumbersVisible, handleChangeLineNumberVisibility }) => {
 	return (
 		<div className="toggle-switch">
-			<label className="toggle-switch-label" htmlFor={name} />
+			<label className="toggle-switch-label" htmlFor={name}>
+				Show Line Numbers:{" "}
+			</label>
 			<input
 				type="checkbox"
 				className="toggle-switch-checkbox"

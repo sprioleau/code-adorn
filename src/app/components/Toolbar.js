@@ -18,14 +18,11 @@ const Toolbar = ({
 		<div className="toolbar">
 			<ThemeSelect themeOption={themeOption} handleThemeChange={handleChangeTheme} />
 			<LanguageSelect language={language} handleLanguageChange={handleChangeLanguage} />
-			<span>
-				Show Line Numbers:{" "}
-				<ToggleSwitch
-					name="Line Numbers"
-					lineNumbersVisible={lineNumbersVisible}
-					handleChangeLineNumberVisibility={handleChangeLineNumberVisibility}
-				/>
-			</span>
+			<ToggleSwitch
+				name="Line Numbers"
+				lineNumbersVisible={lineNumbersVisible}
+				handleChangeLineNumberVisibility={handleChangeLineNumberVisibility}
+			/>
 			<ColorPicker screenshotBg={screenshotBg} handleUpdateScreenshotBg={handleUpdateScreenshotBg} />
 		</div>
 	);
