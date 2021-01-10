@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import html2canvas from "html2canvas";
 import Hero from "./components/Hero";
 import Toolbar from "./components/Toolbar";
 import CodeEditor from "./components/CodeEditor";
@@ -10,7 +11,7 @@ const App = () => {
 	const [themeOption, setThemeOption] = useState("material");
 	const [lineNumbersVisible, setLineNumbersVisible] = useState(true);
 	const [screenshotBg, setScreenshotBg] = useState({ hex: "#ffcd31" });
-	const [screenshotUrl, setScreenshotUrl] = useState(null);
+	const [screenshotDataUrl, setScreenshotDataUrl] = useState("/");
 
 	const handleUpdateScreenshotBg = (color) => {
 		setScreenshotBg(color);
@@ -32,54 +33,23 @@ const App = () => {
 		setCodeString(value);
 	};
 
-	// const FETCH_URL = "code-adorn.netlify.app";
-
-	// const screenshotApiOptions = [
-	// 	// { width: "500" },
-	// 	// { height: "500" },
-	// 	{ output: "image" },
-	// 	{ fresh: "true" },
-	// 	{ selector: ".code-editor-wrapper" },
-	// ];
-
-	// const screenshotApiOptionsString = screenshotApiOptions
-	// 	.map((option) => {
-	// 		return Object.entries(option).flat().join("=");
-	// 	})
-	// 	.join("&");
-
-	// const getScreenshot = async () => {
-	// 	const response = await fetch(
-	// 		`https://screenshotapi.net/api/v1/screenshot?token=${process.env.REACT_APP_SCREENSHOT_API_KEY}&url=${FETCH_URL}&${screenshotApiOptionsString}`
-	// 		// fetchOptions
-	// 	);
-	// 	// const screenshot = response.data.screenshot;
-	// 	console.log(response);
-	// };
-
-	const getScreenshot = async () => {
-		const response = await fetch("/api", {
-			headers: {
-				"Content-Type": "application/json",
-				Accept: "application/json",
-			},
+	const createScreenshot = () => {
+		html2canvas(document.querySelector(".code-editor-window-ui")).then((canvas) => {
+			// document.querySelector(".hero").appendChild(canvas); // Add this preview to a modal
+			const canvasDataUrl = canvas.toDataURL("image/png");
+			setScreenshotDataUrl(canvasDataUrl);
 		});
-		const json = await response.json();
-		const url = json.url;
-
-		if (response.status !== 200) throw Error(json);
-
-		console.log("response:", response);
-		console.log("json:", json);
-		console.log("url:", url);
-		setScreenshotUrl(url);
 	};
 
 	return (
 		<div className="app-container">
 			<Hero />
-			<button onClick={getScreenshot}>Get Screenshot</button>
-			{screenshotUrl && <img src={screenshotUrl} alt="screenshot from code-adorn" />}
+			<button onClick={createScreenshot}>Take Screenshot</button>
+			{screenshotDataUrl !== "/" && (
+				<a id="download" download="code-adorn-screenshot.png" href={screenshotDataUrl}>
+					Download to code-adorn-screenshot.png
+				</a>
+			)}
 			<Toolbar
 				language={language}
 				themeOption={themeOption}
