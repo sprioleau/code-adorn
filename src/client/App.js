@@ -66,6 +66,9 @@ const App = () => {
 		});
 		const json = await response.json();
 		const url = json.url;
+
+		if (response.status !== 200) throw Error(json);
+
 		console.log("response:", response);
 		console.log("json:", json);
 		console.log("url:", url);
