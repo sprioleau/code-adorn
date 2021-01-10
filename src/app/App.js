@@ -58,7 +58,12 @@ const App = () => {
 	// };
 
 	const getScreenshot = async () => {
-		const response = await fetch("/api");
+		const response = await fetch("/api", {
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+			},
+		});
 		const json = await response.json();
 		const url = json.url;
 		setScreenshotUrl(url);
