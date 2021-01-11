@@ -5,11 +5,18 @@ import Toolbar from "./components/Toolbar";
 import CodeEditor from "./components/CodeEditor";
 import Footer from "./components/Footer";
 import codeSnippets from "./utilities/codeSnippets";
+import { shortFormatDate, randomIndex } from "./utilities/utilityFunctions";
+
+// Code Mirror mode/language options
+import "codemirror/mode/jsx/jsx";
+import "codemirror/mode/css/css";
+import "codemirror/mode/javascript/javascript";
+import "codemirror/mode/xml/xml";
+import "codemirror/mode/sass/sass";
+import "codemirror/mode/markdown/markdown";
 
 const App = () => {
-	const randomIndex = Math.floor(Math.random() * codeSnippets.length);
-
-	const [codeString, setCodeString] = useState(codeSnippets[randomIndex]);
+	const [codeString, setCodeString] = useState(codeSnippets.javascript[randomIndex(codeSnippets.javascript)]);
 	const [language, setLanguage] = useState("javascript");
 	const [themeOption, setThemeOption] = useState("material");
 	const [lineNumbersVisible, setLineNumbersVisible] = useState(true);
@@ -36,21 +43,15 @@ const App = () => {
 		setCodeString(value);
 	};
 
-	const downloadScreenshot = () => {
-		const downloadButton = document.createElement("a");
-		downloadButton.href = screenshotDataUrl;
-		downloadButton.setAttribute("download", "code-adorn-screenshot.png");
-		downloadButton.style.display = "none";
-		document.body.appendChild(downloadButton);
-		downloadButton.click();
-	};
-
-	const createScreenshot = async (downloadImage) => {
+	const createScreenshot = async () => {
 		const canvas = await html2canvas(document.querySelector(".code-editor-window-ui"));
 		const dataUrl = canvas.toDataURL("image/png");
 		setScreenshotDataUrl(dataUrl);
+	};
 
-		if (downloadImage) downloadScreenshot();
+	const exportScreenshot = async () => {
+		await createScreenshot();
+		document.getElementById("download").click();
 	};
 
 	useEffect(() => {
@@ -61,13 +62,15 @@ const App = () => {
 	return (
 		<div className="app-container">
 			<Hero />
-			<button onClick={() => createScreenshot(false)}>Take Screenshot</button>
-			<button onClick={() => createScreenshot(true)}>Download Screenshot</button>
-			{screenshotDataUrl !== "/" && (
-				<a id="download" download="code-adorn-screenshot.png" style={{ display: "none" }} href={screenshotDataUrl}>
-					Download to code-adorn-screenshot.png
-				</a>
-			)}
+			<button onClick={exportScreenshot}>Export Screenshot</button>
+			<a
+				id="download"
+				href={screenshotDataUrl}
+				style={{ display: "none" }}
+				download={`code-adorn-screenshot-${language}-${shortFormatDate()}`}
+			>
+				Download Screenshot
+			</a>
 			<Toolbar
 				language={language}
 				themeOption={themeOption}

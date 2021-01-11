@@ -1,14 +1,8 @@
-const formatDate = () => {
-	const d = new Date();
-	const curr_date = d.getDate();
-	const curr_month = d.getMonth() + 1; //months are zero based
-	const curr_year = d.getFullYear();
+import { formatDate, repeatVibe } from "./utilityFunctions";
 
-	return curr_date + "-" + curr_month + "-" + curr_year;
-};
-
-const codeSnippets = [
-	`let fruits = ["bananas", "Apples", "Oranges"];
+const codeSnippets = {
+	javascript: [
+		`let fruits = ["bananas", "Apples", "Oranges"];
 
   fruits.sort((a, b) => {
     return a.toLowerCase().localeCompare(b.toLowerCase());
@@ -17,7 +11,7 @@ const codeSnippets = [
   console.log(fruits);
   // ["Apples", "bananas", "Oranges"]`,
 
-	`const formatDate = () => {
+		`const formatDate = () => {
     const d = new Date();
     const curr_date = d.getDate();
     const curr_month = d.getMonth() + 1; //months are zero based
@@ -28,6 +22,11 @@ const codeSnippets = [
   
   console.log(formatDate());
   // ${formatDate()}`,
-];
+
+		`const repeatVibe = (repeat, vibe) => new Array(repeat).fill(vibe);
+console.log(repeatVibe(5, "🤩"));
+// [${repeatVibe(5, "🤩")}]`,
+	],
+};
 
 export default codeSnippets;

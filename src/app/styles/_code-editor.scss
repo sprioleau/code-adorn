@@ -1,43 +1,45 @@
 .code-editor-wrapper {
-	position: relative;
 	margin-bottom: 3rem;
 
-	.language-tag {
-		position: absolute;
-		bottom: 1rem;
-		right: 1rem;
-		font-family: monospace;
-		font-size: 0.8rem;
-		color: $white;
-		background: rgba(0, 0, 0, 0.5);
-		padding: 0.5rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1rem;
-	}
-
 	.code-editor-window-ui {
-		background-color: $ca-purple;
-		// border-radius: $corner-radius;
-		padding: 4rem;
-	}
+		@include center;
 
-	code {
-		font-family: $space;
-	}
+		.code-editor-container {
+			position: relative;
+			padding: 4rem;
 
-	.code-editor {
-		width: 100%;
-		margin: auto;
-		border-radius: $corner-radius;
-		overflow: hidden;
-		box-shadow: 0 5px 50px -5px rgba(0, 0, 0, 0.5);
+			.code-editor {
+				display: inline-block;
+				min-width: 90px;
+				max-width: 1024px;
+				margin: auto;
+				overflow: hidden;
+				box-shadow: 0 5px 50px -5px rgba(0, 0, 0, 0.5);
+			}
+
+			.language-tag {
+				position: absolute;
+				top: 0.75rem;
+				right: 1rem;
+				font-family: monospace;
+				font-size: 0.8rem;
+				border-radius: $corner-radius;
+				color: $white;
+				background: rgba(0, 0, 0, 0.5);
+				padding: 0.3rem 0.5rem;
+				text-transform: uppercase;
+				letter-spacing: 0.1rem;
+			}
+		}
 	}
 
 	.CodeMirror.CodeMirror-wrap {
 		width: 100%;
 		height: 100%;
 		padding: 2.5rem 0 1rem;
+		padding-right: 1rem;
 		position: relative;
+		border-radius: $corner-radius;
 
 		&::before {
 			content: url("../images/window-options.png");

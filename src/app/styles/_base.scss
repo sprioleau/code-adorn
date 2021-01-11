@@ -29,6 +29,10 @@ a {
 	color: inherit;
 }
 
+code {
+	font-family: $space;
+}
+
 // Layout
 .app-container {
 	width: 900px;
