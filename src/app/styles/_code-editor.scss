@@ -56,7 +56,10 @@
 		font-size: 0.9rem;
 	}
 
-	.line-numbers-hidden .CodeMirror-code {
-		margin-left: 11px;
+	.line-numbers-hidden {
+		.CodeMirror-code,
+		.CodeMirror-cursor {
+			margin-left: 11px;
+		}
 	}
 }

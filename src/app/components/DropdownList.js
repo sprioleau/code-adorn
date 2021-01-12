@@ -1,15 +1,7 @@
-import React, { useState } from "react";
-import { toTitleCase, composeClasses } from "../utilities/utilityFunctions";
-import { selectTheme } from "../state-provider/selectors/selectors";
-import { useSelector } from "react-redux";
+import React from "react";
+import { composeClasses } from "../utilities/utilityFunctions";
 
-const DropdownList = ({ listItems, addClass, onClick }) => {
-	const [open, setOpen] = useState(false);
-
-	const theme = useSelector(selectTheme);
-
-	const handleOpen = () => setOpen(!open);
-
+const DropdownList = ({ listItems, value, open, addClass, labelOnClick, listItemOnClick }) => {
 	const dropdownListClasses = {
 		"dropdown-list": "",
 		[addClass]: addClass ? true : null,
@@ -19,18 +11,18 @@ const DropdownList = ({ listItems, addClass, onClick }) => {
 		<div className={composeClasses(dropdownListClasses)}>
 			<input
 				autoComplete="off"
-				value={theme}
-				placeholder={toTitleCase(theme)}
+				value={value}
 				spellCheck={false}
-				className="dropdown-list-label"
+				className="dropdown-list__label"
 				readOnly={true}
-				onClick={handleOpen}
+				onClick={labelOnClick}
+				onBlur={labelOnClick}
 			/>
 			{open && (
 				<ul className="dropdown-list__list">
-					{listItems.map((item) => (
-						<li key={item} className="dropdown-list__list-item" onClick={() => onClick(item)}>
-							{toTitleCase(item)}
+					{listItems.map(({ name, label }) => (
+						<li key={name} className="list-item" onClick={() => listItemOnClick(name)}>
+							{label}
 						</li>
 					))}
 				</ul>

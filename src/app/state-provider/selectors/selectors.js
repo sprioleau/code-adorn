@@ -1,6 +1,9 @@
 export const selectCodeString = (state) => state.codeString;
 export const selectLanguage = (state) => state.language;
+export const selectLanguageDropdownOpen = (state) => state.languageDropdownOpen;
 export const selectTheme = (state) => state.theme;
+export const selectThemeDropdownOpen = (state) => state.themeDropdownOpen;
 export const selectLineNumbersVisible = (state) => state.lineNumbersVisible;
 export const selectScreenshotBg = (state) => state.screenshotBg;
 export const selectScreenshotDataUrl = (state) => state.screenshotDataUrl;
+export const selectColorPickerOpen = (state) => state.colorPickerOpen;

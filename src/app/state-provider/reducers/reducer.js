@@ -5,10 +5,13 @@ import codeSnippets from "../../utilities/codeSnippets";
 const initialState = {
 	codeString: codeSnippets.javascript[randomIndex(codeSnippets.javascript)],
 	language: "javascript",
+	languageDropdownOpen: false,
 	theme: "material",
+	themeDropdownOpen: false,
 	lineNumbersVisible: false,
 	screenshotBg: { hex: "#ffcd31" },
 	screenshotDataUrl: "/",
+	colorPickerOpen: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -23,12 +26,26 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				language: action.language,
+				languageDropdownOpen: false,
+			};
+
+		case types.TOGGLE_LANGUAGE_DROPDOWN:
+			return {
+				...state,
+				languageDropdownOpen: !state.languageDropdownOpen,
 			};
 
 		case types.UPDATE_THEME:
 			return {
 				...state,
 				theme: action.theme,
+				themeDropdownOpen: false,
+			};
+
+		case types.TOGGLE_THEME_DROPDOWN:
+			return {
+				...state,
+				themeDropdownOpen: !state.themeDropdownOpen,
 			};
 
 		case types.TOGGLE_LINE_NUMBERS_VISIBILITY:
@@ -47,6 +64,12 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				screenshotDataUrl: action.screenshotDataUrl,
+			};
+
+		case types.TOGGLE_COLOR_PICKER:
+			return {
+				...state,
+				colorPickerOpen: !state.colorPickerOpen,
 			};
 
 		default:

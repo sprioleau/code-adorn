@@ -1,6 +1,6 @@
 import React from "react";
 import { Controlled as ControlledEditor } from "react-codemirror2";
-import { LanguageTag } from "./LanguageSelect";
+import languageOptions from "../utilities/languageOptions";
 import { updateCodeString } from "../state-provider/actions/actionCreators";
 import {
 	selectCodeString,
@@ -57,3 +57,9 @@ const CodeEditor = () => {
 };
 
 export default CodeEditor;
+
+const LanguageTag = ({ language }) => {
+	const label = languageOptions.find((item) => item.name === language).label;
+
+	return <span className="language-tag">{label}</span>;
+};

@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { SketchPicker } from "react-color";
-import { updateScreenshotBg } from "../state-provider/actions/actionCreators";
-import { selectScreenshotBg } from "../state-provider/selectors/selectors";
+import { updateScreenshotBg, toggleColorPicker } from "../state-provider/actions/actionCreators";
+import { selectScreenshotBg, selectColorPickerOpen } from "../state-provider/selectors/selectors";
 import { useDispatch, useSelector } from "react-redux";
 
 const ColorPicker = () => {
-	const [colorPickerOpen, setColorPickerOpen] = useState(false);
 	const dispatch = useDispatch();
 	const screenshotBg = useSelector(selectScreenshotBg);
-
-	const handleToggleColorPicker = () => {
-		setColorPickerOpen(!colorPickerOpen);
-	};
+	const colorPickerOpen = useSelector(selectColorPickerOpen);
 
 	const styles = {
 		currentColor: {
@@ -21,7 +17,7 @@ const ColorPicker = () => {
 
 	return (
 		<div className="color-picker">
-			<div className="color-picker__button" onClick={handleToggleColorPicker}>
+			<div className="color-picker__button" onClick={() => dispatch(toggleColorPicker())}>
 				<div className="current-color" style={styles.currentColor} />
 			</div>
 			{colorPickerOpen && (

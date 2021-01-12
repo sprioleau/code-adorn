@@ -5,8 +5,6 @@ import Toolbar from "./components/Toolbar";
 import CodeEditor from "./components/CodeEditor";
 import Footer from "./components/Footer";
 import { shortFormatDate } from "./utilities/utilityFunctions";
-import DropdownList from "./components/DropdownList";
-import { themeOptions } from "./utilities/themeOptions";
 import "./styles/app.scss";
 
 // CodeMirror Style Imports
@@ -30,7 +28,7 @@ import "codemirror/mode/sass/sass";
 import "codemirror/mode/jsx/jsx";
 import "codemirror/mode/markdown/markdown";
 
-import { updateTheme, updateScreenshotDataUrl } from "./state-provider/actions/actionCreators";
+import { updateScreenshotDataUrl } from "./state-provider/actions/actionCreators";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLanguage, selectScreenshotDataUrl } from "./state-provider/selectors/selectors";
 
@@ -67,7 +65,6 @@ const App = () => {
 				Download Screenshot
 			</a>
 			<Toolbar exportScreenshot={exportScreenshot} />
-			<DropdownList listItems={themeOptions} onClick={(item) => dispatch(updateTheme(item))} />
 			<CodeEditor />
 			<Footer />
 		</div>
