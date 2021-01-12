@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import { SketchPicker } from "react-color";
+import useDismissOnOutsideClick from "../hooks/useDismissOnOutsideClick";
 import { updateScreenshotBg, toggleColorPicker } from "../state-provider/actions/actionCreators";
 import { selectScreenshotBg, selectColorPickerOpen } from "../state-provider/selectors/selectors";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,8 +16,12 @@ const ColorPicker = () => {
 		},
 	};
 
+	const colorPickerRef = useRef(null);
+
+	useDismissOnOutsideClick(colorPickerRef, colorPickerOpen, () => dispatch(toggleColorPicker()));
+
 	return (
-		<div className="color-picker">
+		<div ref={colorPickerRef} className="color-picker">
 			<div className="color-picker__button" onClick={() => dispatch(toggleColorPicker())}>
 				<div className="current-color" style={styles.currentColor} />
 			</div>
