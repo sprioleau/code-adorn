@@ -1,8 +1,25 @@
 import React from "react";
 import { Controlled as ControlledEditor } from "react-codemirror2";
 import { LanguageTag } from "./LanguageSelect";
+import { updateCodeString } from "../state-provider/actions/actionCreators";
+import {
+	selectCodeString,
+	selectLanguage,
+	selectTheme,
+	selectLineNumbersVisible,
+	selectScreenshotBg,
+} from "../state-provider/selectors/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { composeClasses } from "../utilities/utilityFunctions";
 
-const CodeEditor = ({ codeString, language, themeOption, onBeforeChange, lineNumbersVisible, screenshotBg }) => {
+const CodeEditor = () => {
+	const dispatch = useDispatch();
+	const codeString = useSelector(selectCodeString);
+	const language = useSelector(selectLanguage);
+	const theme = useSelector(selectTheme);
+	const lineNumbersVisible = useSelector(selectLineNumbersVisible);
+	const screenshotBg = useSelector(selectScreenshotBg);
+
 	const codeMirrorOptions = {
 		lineNumbers: lineNumbersVisible,
 		highlightFormatting: true,
@@ -12,8 +29,13 @@ const CodeEditor = ({ codeString, language, themeOption, onBeforeChange, lineNum
 		autoCursor: true,
 		autofocus: true,
 		dragDrop: true,
-		theme: themeOption,
+		theme: theme,
 		mode: language,
+	};
+
+	const codeMirrorClasses = {
+		"code-editor": "",
+		"line-numbers-hidden": !lineNumbersVisible,
 	};
 
 	return (
@@ -23,9 +45,9 @@ const CodeEditor = ({ codeString, language, themeOption, onBeforeChange, lineNum
 					<ControlledEditor
 						value={codeString}
 						options={codeMirrorOptions}
-						onBeforeChange={onBeforeChange}
+						onBeforeChange={(editor, data, value) => dispatch(updateCodeString(value))}
 						onChange={(editor, data, value) => {}}
-						className={lineNumbersVisible ? "code-editor" : "code-editor line-numbers-hidden"}
+						className={composeClasses(codeMirrorClasses)}
 					/>
 					<LanguageTag language={language} />
 				</div>

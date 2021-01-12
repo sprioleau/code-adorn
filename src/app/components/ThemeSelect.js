@@ -2,7 +2,7 @@ import React from "react";
 import { styleOptions } from "../utilities/styleOptions";
 import { toTitleCase } from "../utilities/utilityFunctions";
 
-// CodeMirror Style/Mode Imports
+// CodeMirror Style Imports
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/material.css";
 import "codemirror/theme/material-darker.css";
@@ -15,9 +15,13 @@ import "codemirror/theme/hopscotch.css";
 import "codemirror/theme/3024-night.css";
 import "codemirror/theme/lucario.css";
 
+// CodeMirror Mode Imports
 import "codemirror/mode/xml/xml";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/mode/css/css";
+import "codemirror/mode/sass/sass";
+import "codemirror/mode/jsx/jsx";
+import "codemirror/mode/markdown/markdown";
 
 export const ThemeSelect = ({ themeOption, handleThemeChange }) => {
 	return (
