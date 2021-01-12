@@ -1,6 +1,6 @@
 import React from "react";
 import { Controlled as ControlledEditor } from "react-codemirror2";
-import languageOptions from "../utilities/languageOptions";
+// import languageOptions from "../utilities/languageOptions";
 import { updateCodeString } from "../state-provider/actions/actionCreators";
 import {
 	selectCodeString,
@@ -49,7 +49,7 @@ const CodeEditor = () => {
 						onChange={(editor, data, value) => {}}
 						className={composeClasses(codeMirrorClasses)}
 					/>
-					<LanguageTag language={language} />
+					{/* <LanguageTag language={language} /> */}
 				</div>
 			</div>
 		</div>
@@ -58,8 +58,7 @@ const CodeEditor = () => {
 
 export default CodeEditor;
 
-const LanguageTag = ({ language }) => {
-	const label = languageOptions.find((item) => item.name === language).label;
-
-	return <span className="language-tag">{label}</span>;
-};
+// const LanguageTag = ({ language }) => {
+// 	const languageLabel = languageOptions.find((item) => item.name === language).label;
+// 	return <span className="language-tag">{languageLabel}</span>;
+// };
