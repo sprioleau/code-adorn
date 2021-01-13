@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
-const useDismissOnOutsideClick = (ref, triggerElement, callbackFunction) => {
+const useDismissOnOutsideClick = (ref, triggerCondition, callbackFunction) => {
 	const handleClickOutside = (event) => {
-		if (triggerElement && ref.current && !ref.current.contains(event.target)) {
+		if (triggerCondition && ref.current && !ref.current.contains(event.target)) {
 			callbackFunction();
 		}
 	};

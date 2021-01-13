@@ -1,10 +1,9 @@
 .code-editor-wrapper {
-	margin-bottom: 3rem;
-
 	.code-editor-window-ui {
 		@include center;
 
 		.code-editor-container {
+			@include center;
 			position: relative;
 			padding: 4rem;
 
@@ -36,17 +35,19 @@
 	.CodeMirror.CodeMirror-wrap {
 		width: 100%;
 		height: 100%;
-		padding: 2.5rem 0 1rem;
+		padding: 2rem 0 1rem;
 		padding-right: 1rem;
 		position: relative;
 		border-radius: $corner-radius;
 
 		&::before {
-			content: url("../images/window-options.png");
+			content: url("../images/window-options.svg");
+			font-size: 2rem;
 			position: absolute;
 			width: 3.5rem;
-			top: 1rem;
+			top: 1.25rem;
 			left: 1rem;
+			transform: translateY(-50%);
 		}
 	}
 

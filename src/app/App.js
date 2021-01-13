@@ -30,16 +30,17 @@ import "codemirror/mode/markdown/markdown";
 
 import { updateScreenshotDataUrl } from "./state-provider/actions/actionCreators";
 import { useDispatch, useSelector } from "react-redux";
-import { selectLanguage, selectScreenshotDataUrl } from "./state-provider/selectors/selectors";
+import { selectLanguage, selectScreenshotDataUrl, selectScreenshotBg } from "./state-provider/selectors/selectors";
 
 const App = () => {
 	const dispatch = useDispatch();
-	const language = useSelector(selectLanguage);
-	const screenshotDataUrl = useSelector(selectScreenshotDataUrl);
+	const screenshotBg = useSelector(selectScreenshotBg);
 
 	const createScreenshot = async () => {
-		const canvas = await html2canvas(document.querySelector(".code-editor-window-ui"));
-		const dataUrl = canvas.toDataURL("image/png");
+		const canvas = await html2canvas(document.querySelector(".code-editor-container"), {
+			backgroundColor: screenshotBg,
+		});
+		const dataUrl = canvas.toDataURL("image/png", 1);
 		dispatch(updateScreenshotDataUrl(dataUrl));
 	};
 
@@ -56,18 +57,29 @@ const App = () => {
 	return (
 		<div className="app-container">
 			<Hero />
-			<a
-				id="download"
-				href={screenshotDataUrl}
-				style={{ display: "none" }}
-				download={`code-adorn-screenshot-${language}-${shortFormatDate(new Date())}.png`}
-			>
-				Download Screenshot
-			</a>
-			<Toolbar exportScreenshot={exportScreenshot} />
-			<CodeEditor />
+			<div className="main-content">
+				<Toolbar exportScreenshot={exportScreenshot} />
+				<CodeEditor />
+			</div>
 			<Footer />
+			<ScreenshotTarget />
 		</div>
+	);
+};
+
+const ScreenshotTarget = () => {
+	const language = useSelector(selectLanguage);
+	const screenshotDataUrl = useSelector(selectScreenshotDataUrl);
+
+	return (
+		<a
+			id="download"
+			href={screenshotDataUrl}
+			style={{ display: "none" }}
+			download={`code-adorn-screenshot-${language}-${shortFormatDate(new Date())}.png`}
+		>
+			Download Screenshot
+		</a>
 	);
 };
 

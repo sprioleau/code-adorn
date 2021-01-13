@@ -31,19 +31,21 @@ const Toolbar = ({ exportScreenshot }) => {
 		<div className="toolbar">
 			<DropdownList
 				listItems={languageOptions}
-				value={languageOptions.find((item) => item.name === language).label}
+				value={language}
 				open={languageDropdownOpen}
 				addClass="language-picker"
 				labelOnClick={() => dispatch(toggleLanguageDropdown())}
 				listItemOnClick={(item) => dispatch(updateLanguage(item))}
+				icon="🌐"
 			/>
 			<DropdownList
 				listItems={themeOptions}
-				value={themeOptions.find((item) => item.name === theme).label}
+				value={theme}
 				open={themeDropdownOpen}
 				addClass="theme-picker"
 				labelOnClick={() => dispatch(toggleThemeDropdown())}
 				listItemOnClick={(item) => dispatch(updateTheme(item))}
+				icon="🎨"
 			/>
 			<ToggleSwitch name="Line Numbers" />
 			<ColorPicker screenshotBg={screenshotBg} />

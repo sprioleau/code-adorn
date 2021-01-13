@@ -1,5 +1,27 @@
 @mixin center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin bg-glow($color1: $ca-purple, $color2: darken($ca-pink, 20%), $duration: 3000ms) {
+	background: linear-gradient(75deg, rgba($color1, 1) 0%, rgba($color2, 1));
+	background-size: 300% 300%;
+	animation: gradient $duration ease-in-out infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@mixin transition($property: all) {
+	transition: $property 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }

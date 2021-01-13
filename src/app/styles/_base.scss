@@ -1,9 +1,5 @@
 * {
 	box-sizing: border-box;
-}
-
-html,
-body {
 	margin: 0;
 	padding: 0;
 }
@@ -38,4 +34,11 @@ code {
 	width: 900px;
 	padding: 3%;
 	margin: 0 auto;
+
+	.main-content {
+		border: $outline-style-heavy;
+		padding: 1rem;
+		margin-bottom: 3rem;
+		border-radius: $corner-radius-wide;
+	}
 }

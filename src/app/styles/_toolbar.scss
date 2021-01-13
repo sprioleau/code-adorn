@@ -1,32 +1,5 @@
 .toolbar {
 	display: flex;
 	justify-content: space-between;
-}
-
-.dropdown-list {
-	position: relative;
-	width: 10rem;
-
-	&__label {
-		appearance: none;
-		border: 0;
-		padding: $list-item-padding;
-	}
-
-	&__list {
-		position: absolute;
-		background-color: $ui-bg;
-		border: $outline-style-light;
-		width: 100%;
-		z-index: 10;
-
-		.list-item {
-			display: block;
-			padding: $list-item-padding;
-
-			&:hover {
-				background-color: $ca-purple;
-			}
-		}
-	}
+	margin-bottom: 1rem;
 }
