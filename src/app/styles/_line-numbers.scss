@@ -1,0 +1,10 @@
+.line-numbers {
+	@include center;
+	width: 2.5rem;
+	height: 2.5rem;
+	color: $ca-pink;
+
+	svg {
+		width: 1.75rem;
+	}
+}

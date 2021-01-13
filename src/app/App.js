@@ -55,15 +55,17 @@ const App = () => {
 	}, []);
 
 	return (
-		<div className="app-container">
-			<Hero />
-			<div className="main-content">
-				<Toolbar exportScreenshot={exportScreenshot} />
-				<CodeEditor />
-			</div>
+		<section className="app-container">
+			<main>
+				<Hero />
+				<div className="main-content">
+					<Toolbar exportScreenshot={exportScreenshot} />
+					<CodeEditor />
+				</div>
+			</main>
 			<Footer />
 			<ScreenshotTarget />
-		</div>
+		</section>
 	);
 };
 

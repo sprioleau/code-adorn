@@ -1,3 +1,8 @@
+// Breakpoints
+$bp-small: 576px;
+$bp-medium: 850px;
+$bp-large: 1180px;
+
 @mixin center {
 	display: flex;
 	justify-content: center;
@@ -24,4 +29,22 @@
 
 @mixin transition($property: all) {
 	transition: $property 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@mixin sm {
+	@media (max-width: #{$bp-small}) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (max-width: #{$bp-medium}) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media (max-width: #{$bp-large}) {
+		@content;
+	}
 }

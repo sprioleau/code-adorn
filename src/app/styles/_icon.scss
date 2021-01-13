@@ -1,5 +1,13 @@
 .icon {
-	svg {
+	@include center;
+
+	&.sm svg {
 		width: 1rem;
+	}
+	&.md svg {
+		width: 1.5rem;
+	}
+	&.lg svg {
+		width: 2rem;
 	}
 }

@@ -1,22 +1,38 @@
+$color-picker-size: 2.5rem;
+
 .color-picker {
 	@include center;
 	position: relative;
 	z-index: 5;
+	cursor: pointer;
 
 	&__button {
 		overflow: hidden;
 		border-radius: $corner-radius;
 
 		.current-color {
-			border: 2px solid white;
-			width: 2rem;
-			height: 2rem;
+			border: $outline-style-light;
+			border-radius: $corner-radius;
+			width: $color-picker-size;
+			height: $color-picker-size;
 		}
 	}
 
 	.sketch-picker {
 		position: absolute;
+		top: calc(100% + 0.5rem);
 		right: 0;
 		z-index: 1;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0.25rem;
+			right: 0.8rem;
+			transform: translateY(-50%) rotate(45deg);
+			width: 1rem;
+			height: 1rem;
+			background-color: $white;
+		}
 	}
 }

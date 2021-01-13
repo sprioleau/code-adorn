@@ -1,9 +1,11 @@
 import React from "react";
 import languageOptions from "../utilities/languageOptions";
 import { themeOptions } from "../utilities/themeOptions";
-import ToggleSwitch from "./ToggleSwitch";
+import ToggleLineNumbersButton from "./ToggleLineNumbersButton";
 import ColorPicker from "./ColorPicker";
 import DropdownList from "./DropdownList";
+import ExportScreenshotButton from "./ExportScreenshotButton";
+import Icon, { ICONS } from "./Icon";
 import {
 	updateLanguage,
 	toggleLanguageDropdown,
@@ -29,27 +31,33 @@ const Toolbar = ({ exportScreenshot }) => {
 
 	return (
 		<div className="toolbar">
-			<DropdownList
-				listItems={languageOptions}
-				value={language}
-				open={languageDropdownOpen}
-				addClass="language-picker"
-				labelOnClick={() => dispatch(toggleLanguageDropdown())}
-				listItemOnClick={(item) => dispatch(updateLanguage(item))}
-				icon="🌐"
-			/>
-			<DropdownList
-				listItems={themeOptions}
-				value={theme}
-				open={themeDropdownOpen}
-				addClass="theme-picker"
-				labelOnClick={() => dispatch(toggleThemeDropdown())}
-				listItemOnClick={(item) => dispatch(updateTheme(item))}
-				icon="🎨"
-			/>
-			<ToggleSwitch name="Line Numbers" />
-			<ColorPicker screenshotBg={screenshotBg} />
-			<button onClick={exportScreenshot}>Export Screenshot</button>
+			<div className="row dropdowns">
+				<DropdownList
+					listItems={languageOptions}
+					value={language}
+					open={languageDropdownOpen}
+					addClass="language-picker"
+					labelOnClick={() => dispatch(toggleLanguageDropdown())}
+					listItemOnClick={(item) => dispatch(updateLanguage(item))}
+					icon={<Icon icon={ICONS.GLOBE} size="md" />}
+				/>
+				<DropdownList
+					listItems={themeOptions}
+					value={theme}
+					open={themeDropdownOpen}
+					addClass="theme-picker"
+					labelOnClick={() => dispatch(toggleThemeDropdown())}
+					listItemOnClick={(item) => dispatch(updateTheme(item))}
+					icon={<Icon icon={ICONS.STYLE} size="md" />}
+				/>
+			</div>
+			<div className="row export-options">
+				<div className="style-options">
+					<ToggleLineNumbersButton />
+					<ColorPicker screenshotBg={screenshotBg} />
+				</div>
+				<ExportScreenshotButton exportScreenshot={exportScreenshot} />
+			</div>
 		</div>
 	);
 };

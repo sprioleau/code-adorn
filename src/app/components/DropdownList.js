@@ -25,7 +25,7 @@ const DropdownList = ({ listItems, value, open, addClass, labelOnClick, listItem
 
 	return (
 		<div className="dropdown-list-wrapper">
-			<span className="icon label-icon">{icon}</span>
+			<span className="label-icon">{icon}</span>
 			<div ref={dropdownRef} className={composeClasses(dropdownListClasses)}>
 				<div className="dropdown-list__label" onClick={labelOnClick}>
 					{displayedLabel}

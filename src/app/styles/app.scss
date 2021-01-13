@@ -1,8 +1,8 @@
 // Config
 @import "typography";
 @import "variables";
-@import "base";
 @import "mixins";
+@import "base";
 
 // Components
 @import "button";
@@ -10,7 +10,7 @@
 @import "hero";
 @import "toolbar";
 @import "dropdown-list";
-@import "toggle-switch";
+@import "line-numbers";
 @import "color-picker";
 @import "code-editor";
 @import "footer";

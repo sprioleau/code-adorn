@@ -1,5 +1,68 @@
 .toolbar {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	margin-bottom: 1rem;
+
+	.row {
+		display: flex;
+
+		& > * {
+			margin-right: 1rem;
+		}
+
+		& > :last-child {
+			margin-right: 0;
+		}
+
+		&.dropdowns {
+			flex-grow: 1;
+			margin-right: 1rem;
+		}
+
+		&.export-options {
+			@include center;
+
+			.style-options {
+				@include center;
+
+				& > :first-child {
+					margin-right: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@include md {
+	.toolbar {
+		flex-direction: column;
+
+		.row.dropdowns {
+			margin-bottom: 1rem;
+			margin-right: 0;
+			width: 100%;
+		}
+
+		.row.export-options {
+			justify-content: space-between;
+			width: 100%;
+		}
+	}
+}
+
+@include sm {
+	.row.dropdowns {
+		display: flex;
+		flex-direction: column;
+
+		& > :first-child {
+			margin-bottom: 1rem;
+			margin-right: 0;
+		}
+	}
+
+	.btn.export {
+		padding: 1rem;
+	}
 }

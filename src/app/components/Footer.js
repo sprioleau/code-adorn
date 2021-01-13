@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		<footer className="footer">
+		<footer className="footer" role="contentinfo">
 			<ul className="footer__footer-links">
 				<li className="footer-link">
 					<a href="https://github.com/sprioleau/code-adorn">source</a>

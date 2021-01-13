@@ -3,7 +3,7 @@ import { ReactComponent as CodeAdornWordmark } from "../images/logo/code-adorn-w
 
 const Hero = () => {
 	return (
-		<div className="hero">
+		<header className="hero">
 			<div className="hero__page-title">
 				<h1 className="hidden">code_adorn</h1>
 				<span className="logo">
@@ -13,7 +13,7 @@ const Hero = () => {
 			<p className="hero__intro">
 				Show off that beautiful source code.<br></br>Start typing or drop a file into the editor to start.
 			</p>
-		</div>
+		</header>
 	);
 };
 
