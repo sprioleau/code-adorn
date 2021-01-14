@@ -1,0 +1,47 @@
+.presets-picker {
+	position: relative;
+	z-index: 20;
+
+	&__list-wrapper {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 3.25rem;
+			right: 0.8rem;
+			transform: translateY(-50%) rotate(45deg);
+			width: 1rem;
+			height: 1rem;
+			background-color: $white;
+			z-index: -1;
+		}
+	}
+
+	&__list {
+		display: flex;
+		position: absolute;
+		right: 0;
+		top: calc(100% + 0.5rem);
+		width: 230px;
+		padding: 0.5rem 0.6rem;
+		border-radius: $corner-radius;
+		background-color: $white;
+		box-shadow: 0 15px 25px -3px rgba($ui-bg, 0.8);
+		overflow-x: scroll;
+	}
+
+	&__list-item {
+		display: block;
+		margin-right: 0.5rem;
+
+		&:last-child {
+			padding-right: 0.5rem;
+		}
+	}
+
+	&__image {
+		display: block;
+		width: 120px;
+		height: auto;
+		border-radius: 0.25rem;
+	}
+}

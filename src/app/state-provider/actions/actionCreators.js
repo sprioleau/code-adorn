@@ -49,3 +49,7 @@ export const toggleColorPicker = () => ({
 export const toggleStylePicker = () => ({
 	type: types.TOGGLE_STYLE_PICKER,
 });
+
+export const togglePresetsPicker = () => ({
+	type: types.TOGGLE_PRESETS_PICKER,
+});

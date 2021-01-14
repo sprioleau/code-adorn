@@ -5,12 +5,14 @@ import { ReactComponent as GlobeIcon } from "../images/icons/globe.svg";
 import { ReactComponent as LineNumbersIcon } from "../images/icons/line-numbers.svg";
 import { ReactComponent as StyleIcon } from "../images/icons/style.svg";
 import { ReactComponent as RandomStyleIcon } from "../images/icons/random-style.svg";
+import { ReactComponent as PresetsIcon } from "../images/icons/presets.svg";
 
 export const ICONS = {
 	GLOBE: <GlobeIcon />,
 	LINE_NUMBERS: <LineNumbersIcon />,
 	STYLE: <StyleIcon />,
 	RANDOM_STYLE: <RandomStyleIcon />,
+	PRESETS: <PresetsIcon />,
 };
 
 export const Icon = ({ icon, iconClass, size, onClick }) => {

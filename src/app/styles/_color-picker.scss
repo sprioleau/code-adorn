@@ -3,7 +3,7 @@ $color-picker-size: 2.5rem;
 .color-picker {
 	@include center;
 	position: relative;
-	z-index: 5;
+	z-index: 15;
 	cursor: pointer;
 
 	&__button {

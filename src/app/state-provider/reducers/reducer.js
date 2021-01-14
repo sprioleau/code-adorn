@@ -15,6 +15,7 @@ const initialState = {
 	screenshotDataUrl: "/",
 	colorPickerOpen: false,
 	stylePickerOpen: false,
+	presetsPickerOpen: false,
 	screenshotUrl: "",
 };
 
@@ -86,6 +87,12 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				stylePickerOpen: !state.stylePickerOpen,
+			};
+
+		case types.TOGGLE_PRESETS_PICKER:
+			return {
+				...state,
+				presetsPickerOpen: !state.presetsPickerOpen,
 			};
 
 		default:

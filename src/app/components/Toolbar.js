@@ -5,6 +5,7 @@ import ToggleLineNumbersButton from "./ToggleLineNumbersButton";
 import RandomStyleButton from "./RandomStyleButton";
 import ColorPicker from "./ColorPicker";
 import DropdownList from "./DropdownList";
+import PresetsPicker from "./PresetsPicker";
 import SaveScreenshotButton from "./SaveScreenshotButton";
 import Icon, { ICONS } from "./Icon";
 import {
@@ -57,6 +58,7 @@ const Toolbar = () => {
 					<ToggleLineNumbersButton />
 					<RandomStyleButton />
 					<ColorPicker screenshotBg={screenshotBg} />
+					<PresetsPicker />
 				</div>
 				<SaveScreenshotButton />
 			</div>

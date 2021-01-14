@@ -5,6 +5,7 @@ $dropdown-item-height: 2.5rem;
 	border: $outline-style-light;
 	border-radius: $corner-radius;
 	flex: 1 1;
+	z-index: 20;
 
 	.label-icon {
 		padding: 0.5rem;

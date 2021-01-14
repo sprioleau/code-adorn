@@ -83,14 +83,14 @@ console.log(repeatVibe(5, "🤩"));
 	],
 	jsx: [
 		`const Footer = () => {
-	return (
-		<footer>
-			<div>
-				<a href="https://github.com/sprioleau/code-adorn">source</a>
-				<a href="https://github.com/sprioleau">about</a>
-			</div>
-			<div>created by <span>@sprioleau</span>👨🏾‍💻</div>
-		</footer>
+return (
+	<footer>
+		<div>
+			<a href="https://github.com/sprioleau/code-adorn">source</a>
+			<a href="https://github.com/sprioleau">about</a>
+		</div>
+		<div>created by <span>@sprioleau</span>👨🏾‍💻</div>
+	</footer>
 	);
 };`,
 		`const personName = 'Tony Stark';
