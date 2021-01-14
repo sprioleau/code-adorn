@@ -1,5 +1,5 @@
 import types from "../types/types";
-import { randomItemFromArray } from "../../utilities/utilityFunctions";
+import { randomItemFromArray } from "../../utilities/functions/utilityFunctions";
 import codeSnippets from "../../utilities/codeSnippets";
 
 const DEFAULT_LANGUAGE = randomItemFromArray(Object.keys(codeSnippets));

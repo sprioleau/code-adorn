@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { composeClasses } from "../utilities/utilityFunctions";
+import { composeClasses } from "../utilities/functions/utilityFunctions";
 import useDismissOnOutsideClick from "../hooks/useDismissOnOutsideClick";
 import { toggleLanguageDropdown, toggleThemeDropdown } from "../state-provider/actions/actionCreators";
 import { useDispatch } from "react-redux";

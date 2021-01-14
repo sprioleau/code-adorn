@@ -1,4 +1,4 @@
-import { formatDate, repeatVibe } from "./utilityFunctions";
+import { formatDate, repeatVibe } from "./functions/utilityFunctions";
 
 const codeSnippets = {
 	javascript: [

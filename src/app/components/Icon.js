@@ -1,5 +1,5 @@
 import React from "react";
-import { composeClasses } from "../utilities/utilityFunctions";
+import { composeClasses } from "../utilities/functions/utilityFunctions";
 
 import { ReactComponent as GlobeIcon } from "../images/icons/globe.svg";
 import { ReactComponent as LineNumbersIcon } from "../images/icons/line-numbers.svg";

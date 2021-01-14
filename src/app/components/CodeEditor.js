@@ -10,7 +10,7 @@ import {
 	selectScreenshotBg,
 } from "../state-provider/selectors/selectors";
 import { useDispatch, useSelector } from "react-redux";
-import { composeClasses } from "../utilities/utilityFunctions";
+import { composeClasses } from "../utilities/functions/utilityFunctions";
 
 const CodeEditor = () => {
 	const dispatch = useDispatch();

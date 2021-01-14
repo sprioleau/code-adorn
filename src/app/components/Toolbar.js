@@ -21,7 +21,7 @@ import {
 } from "../state-provider/selectors/selectors";
 import { useDispatch, useSelector } from "react-redux";
 
-const Toolbar = ({ exportScreenshot }) => {
+const Toolbar = () => {
 	const dispatch = useDispatch();
 	const screenshotBg = useSelector(selectScreenshotBg);
 	const language = useSelector(selectLanguage);
@@ -56,7 +56,7 @@ const Toolbar = ({ exportScreenshot }) => {
 					<ToggleLineNumbersButton />
 					<ColorPicker screenshotBg={screenshotBg} />
 				</div>
-				<ExportScreenshotButton exportScreenshot={exportScreenshot} />
+				<ExportScreenshotButton />
 			</div>
 		</div>
 	);
