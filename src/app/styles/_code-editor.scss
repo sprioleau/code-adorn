@@ -33,6 +33,18 @@
 		}
 	}
 
+	.window-controls {
+		position: absolute;
+		background-image: url("../images/window-controls-masked.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		top: 5rem;
+		left: 4.75rem;
+		height: 1rem;
+		width: 5rem;
+		z-index: 40;
+	}
+
 	.CodeMirror.CodeMirror-wrap {
 		width: 100%;
 		height: 100%;
@@ -41,15 +53,15 @@
 		position: relative;
 		border-radius: $corner-radius;
 
-		&::before {
-			content: url("../images/window-options.svg");
-			font-size: 2rem;
-			position: absolute;
-			width: 3.5rem;
-			top: 1.25rem;
-			left: 1rem;
-			transform: translateY(-50%);
-		}
+		// &::before {
+		// 	content: url("../images/window-options.png");
+		// 	font-size: 2rem;
+		// 	position: absolute;
+		// 	width: 3.5rem;
+		// 	top: 1.25rem;
+		// 	left: 1rem;
+		// 	transform: translateY(-50%);
+		// }
 	}
 
 	.CodeMirror-code > *,

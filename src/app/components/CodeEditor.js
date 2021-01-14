@@ -42,6 +42,7 @@ const CodeEditor = () => {
 		<div className="code-editor-wrapper" id="screenshot-target">
 			<div className="code-editor-window-ui">
 				<div className="code-editor-container" style={{ backgroundColor: screenshotBg.hex }}>
+					<div className="window-controls"></div>
 					<ControlledEditor
 						value={codeString}
 						options={codeMirrorOptions}
