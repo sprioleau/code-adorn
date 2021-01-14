@@ -14,6 +14,7 @@ const initialState = {
 	screenshotBg: { hex: "#ffcd31" },
 	screenshotDataUrl: "/",
 	colorPickerOpen: false,
+	stylePickerOpen: false,
 	screenshotUrl: "",
 };
 
@@ -79,6 +80,12 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				colorPickerOpen: !state.colorPickerOpen,
+			};
+
+		case types.TOGGLE_STYLE_PICKER:
+			return {
+				...state,
+				stylePickerOpen: !state.stylePickerOpen,
 			};
 
 		default:

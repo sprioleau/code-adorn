@@ -7,3 +7,4 @@ export const selectLineNumbersVisible = (state) => state.lineNumbersVisible;
 export const selectScreenshotBg = (state) => state.screenshotBg;
 export const selectScreenshotDataUrl = (state) => state.screenshotDataUrl;
 export const selectColorPickerOpen = (state) => state.colorPickerOpen;
+export const selectStylePickerOpen = (state) => state.stylePickerOpen;

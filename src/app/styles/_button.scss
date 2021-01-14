@@ -13,4 +13,9 @@
 	&:hover {
 		background-color: rgba($ca-pink, 0.15);
 	}
+
+	&.square {
+		height: 2.5rem;
+		width: 2.5rem;
+	}
 }

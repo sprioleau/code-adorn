@@ -2,9 +2,10 @@ import React from "react";
 import languageOptions from "../utilities/languageOptions";
 import { themeOptions } from "../utilities/themeOptions";
 import ToggleLineNumbersButton from "./ToggleLineNumbersButton";
+import RandomStyleButton from "./RandomStyleButton";
 import ColorPicker from "./ColorPicker";
 import DropdownList from "./DropdownList";
-import ExportScreenshotButton from "./ExportScreenshotButton";
+import SaveScreenshotButton from "./SaveScreenshotButton";
 import Icon, { ICONS } from "./Icon";
 import {
 	updateLanguage,
@@ -54,9 +55,10 @@ const Toolbar = () => {
 			<div className="row export-options">
 				<div className="style-options">
 					<ToggleLineNumbersButton />
+					<RandomStyleButton />
 					<ColorPicker screenshotBg={screenshotBg} />
 				</div>
-				<ExportScreenshotButton />
+				<SaveScreenshotButton />
 			</div>
 		</div>
 	);

@@ -11,4 +11,19 @@ export const themeOptions = [
 	{ name: "lucario", label: "Lucario" },
 ];
 
+export const randomColorPickerOptions = [
+	"#F5A623",
+	"#F8E71C",
+	"#BD10E0",
+	"#cd0cc7",
+	"#9013FE",
+	"#3210ad",
+	"#4A90E2",
+	"#50E3C2",
+	"#B8E986",
+	"#59A688",
+	"#91d916",
+	"#090F31",
+];
+
 export default themeOptions;

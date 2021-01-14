@@ -8,7 +8,7 @@ import { setScreenshotUrl } from "../state-provider/actions/actionCreators";
 import { selectLanguage, selectScreenshotBg } from "../state-provider/selectors/selectors";
 import { useDispatch, useSelector } from "react-redux";
 
-const ExportScreenshotButton = () => {
+const SaveScreenshotButton = () => {
 	const screenshotBg = useSelector(selectScreenshotBg);
 	const language = useSelector(selectLanguage);
 	const dispatch = useDispatch();
@@ -29,16 +29,16 @@ const ExportScreenshotButton = () => {
 		history.push("/screenshot");
 	};
 
-	const handleExportScreenshot = () => {
+	const handleSaveScreenshot = () => {
 		if (isBrowser) return browserExport(targetSelector, fileName, options);
 		if (isMobile) return mobileExport();
 	};
 
 	return (
-		<button className="btn export" onClick={handleExportScreenshot}>
-			Export Screenshot
+		<button className="btn export" onClick={handleSaveScreenshot}>
+			Save Screenshot
 		</button>
 	);
 };
 
-export default ExportScreenshotButton;
+export default SaveScreenshotButton;

@@ -7,7 +7,7 @@ const ToggleLineNumbersButton = () => {
 	const dispatch = useDispatch();
 
 	return (
-		<button className="btn line-numbers" onClick={() => dispatch(toggleLineNumbersVisibility())}>
+		<button className="btn line-numbers square" onClick={() => dispatch(toggleLineNumbersVisibility())}>
 			<Icon icon={ICONS.LINE_NUMBERS} size="md" />
 		</button>
 	);

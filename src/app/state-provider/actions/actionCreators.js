@@ -45,3 +45,7 @@ export const updateScreenshotDataUrl = (screenshotDataUrl) => ({
 export const toggleColorPicker = () => ({
 	type: types.TOGGLE_COLOR_PICKER,
 });
+
+export const toggleStylePicker = () => ({
+	type: types.TOGGLE_STYLE_PICKER,
+});
