@@ -81,6 +81,7 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				colorPickerOpen: !state.colorPickerOpen,
+				presetsPickerOpen: false,
 			};
 
 		case types.TOGGLE_STYLE_PICKER:
@@ -93,6 +94,7 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				presetsPickerOpen: !state.presetsPickerOpen,
+				colorPickerOpen: false,
 			};
 
 		default:

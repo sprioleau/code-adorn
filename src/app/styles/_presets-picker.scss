@@ -45,3 +45,12 @@
 		border-radius: 0.25rem;
 	}
 }
+
+@include sm {
+	.presets-picker {
+		&__list {
+			right: 50%;
+			transform: translateX(50%);
+		}
+	}
+}
