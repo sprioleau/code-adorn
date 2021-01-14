@@ -1,10 +1,12 @@
 import types from "../types/types";
-import { randomIndex } from "../../utilities/utilityFunctions";
+import { randomItemFromArray } from "../../utilities/utilityFunctions";
 import codeSnippets from "../../utilities/codeSnippets";
 
+const DEFAULT_LANGUAGE = randomItemFromArray(Object.keys(codeSnippets));
+
 const initialState = {
-	codeString: codeSnippets.javascript[randomIndex(codeSnippets.javascript)],
-	language: "javascript",
+	codeString: randomItemFromArray(codeSnippets[DEFAULT_LANGUAGE]),
+	language: DEFAULT_LANGUAGE,
 	languageDropdownOpen: false,
 	theme: "material",
 	themeDropdownOpen: false,

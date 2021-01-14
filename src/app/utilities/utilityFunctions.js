@@ -20,7 +20,7 @@ export const shortFormatDate = (date) => {
 
 export const repeatVibe = (repeat, vibe) => new Array(repeat).fill(vibe);
 
-export const randomIndex = (array) => Math.floor(Math.random() * array.length);
+export const randomItemFromArray = (array) => array[Math.floor(Math.random() * array.length)];
 
 export const toTitleCase = (string) =>
 	string.replace(/(\w)(\w*)/g, (_, g1, g2) => g1.toUpperCase() + g2.toLowerCase()).replace("-", " ");
