@@ -28,11 +28,7 @@ const PresetsPicker = () => {
 								className="presets-picker__list-item"
 								onClick={() => handlePresetSelect(theme, color)}
 							>
-								<img
-									className="presets-picker__image"
-									src={`../images/presets/${previewImageFilename}`}
-									alt={`preset-${index}`}
-								/>
+								<img className="presets-picker__image" src={previewImageFilename} alt={`preset-${index}`} />
 							</li>
 						))}
 					</ul>
