@@ -1,6 +1,4 @@
-import html2canvas from "html2canvas";
-
-const saveData = (blob, fileName) => {
+export const saveData = (blob, fileName) => {
 	const a = document.createElement("a");
 	const targetElement = document.querySelector(".app-container");
 	const url = window.URL.createObjectURL(blob);
@@ -16,9 +14,4 @@ const saveData = (blob, fileName) => {
 	window.URL.revokeObjectURL(url);
 
 	targetElement.removeChild(a);
-};
-
-export const exportScreenshot = async (targetSelector, fileName, options) => {
-	const canvas = await html2canvas(document.querySelector(targetSelector), options);
-	canvas.toBlob((blob) => saveData(blob, fileName));
 };

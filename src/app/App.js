@@ -1,9 +1,11 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Hero from "./components/Hero";
 import Toolbar from "./components/Toolbar";
 import CodeEditor from "./components/CodeEditor";
 import Footer from "./components/Footer";
+import Screenshot from "./components/Screenshot";
 
 import "./styles/app.scss";
 
@@ -30,16 +32,25 @@ import "codemirror/mode/markdown/markdown";
 
 const App = () => {
 	return (
-		<section className="app-container">
-			<main>
-				<Hero />
-				<div className="main-content">
-					<Toolbar />
-					<CodeEditor />
-				</div>
-			</main>
-			<Footer />
-		</section>
+		<Router>
+			<Switch>
+				<Route path="/" exact>
+					<section className="app-container">
+						<main>
+							<Hero />
+							<div className="main-content">
+								<Toolbar />
+								<CodeEditor />
+							</div>
+						</main>
+						<Footer />
+					</section>
+				</Route>
+				<Route path="/screenshot" exact>
+					<Screenshot />
+				</Route>
+			</Switch>
+		</Router>
 	);
 };
 

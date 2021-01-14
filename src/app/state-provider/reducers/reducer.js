@@ -14,10 +14,17 @@ const initialState = {
 	screenshotBg: { hex: "#ffcd31" },
 	screenshotDataUrl: "/",
 	colorPickerOpen: false,
+	screenshotUrl: "",
 };
 
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
+		case types.SET_SCREENSHOT_URL:
+			return {
+				...state,
+				screenshotUrl: action.url,
+			};
+
 		case types.UPDATE_CODE_STRING:
 			return {
 				...state,

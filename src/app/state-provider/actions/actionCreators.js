@@ -1,5 +1,10 @@
 import types from "../types/types";
 
+export const setScreenshotUrl = (url) => ({
+	type: types.SET_SCREENSHOT_URL,
+	url,
+});
+
 export const updateCodeString = (codeString) => ({
 	type: types.UPDATE_CODE_STRING,
 	codeString,
