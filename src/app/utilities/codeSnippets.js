@@ -30,8 +30,8 @@ console.log(repeatVibe(5, "🤩"));
 	xml: [
 		`  <div class="robot">
     <div>🤖</div>
-    <div>/(•)\</div>
-    <div style="margin-left: 7px">/\</div>
+    <div>¯|_(•)_/¯</div>
+    <div style="margin-left: 7px">/|</div>
   </div>`,
 		`<h1>Hello World! 👋🏾 🌍</h1>`,
 	],
