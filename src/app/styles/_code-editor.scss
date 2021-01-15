@@ -1,7 +1,7 @@
 .code-editor-wrapper {
 	.code-editor-window-ui {
-		@include center;
-		overflow: hidden;
+		display: flex;
+		overflow-x: scroll;
 
 		.code-editor-container {
 			@include center;
