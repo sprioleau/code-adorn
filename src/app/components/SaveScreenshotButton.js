@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { isBrowser, isMobile } from "react-device-detect";
-import { saveData } from "../utilities/functions/screenshot";
+import { saveData } from "../utilities/functions/saveData";
 import { shortFormatDate } from "../utilities/functions/utilityFunctions";
 import html2canvas from "html2canvas";
 import { setScreenshotUrl } from "../state-provider/actions/actionCreators";

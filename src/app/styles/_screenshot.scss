@@ -1,0 +1,14 @@
+.button-wrapper {
+	height: 100vh;
+	width: 100%;
+	display: grid;
+	place-items: center;
+
+	a::after {
+		display: none;
+	}
+
+	.icon.arrow-icon {
+		margin-right: 0.75rem;
+	}
+}

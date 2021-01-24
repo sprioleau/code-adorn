@@ -6,8 +6,12 @@
 
 body {
 	background-color: $ui-bg;
+	background-image: url(../images/code-adorn-bg.svg);
+	background-attachment: fixed;
+	background-position: center;
 	color: $ui-text;
 	font-family: $ff;
+	height: 100vh;
 }
 
 p {
@@ -52,10 +56,21 @@ code {
 }
 
 // Layout
+#root {
+	height: 100%;
+}
+
 .app-container {
+	max-width: 1140px;
+	height: 100%;
 	padding: 3%;
 	margin: 0 auto;
-	max-width: 1140px;
+	display: flex;
+	flex-direction: column;
+
+	.main-content-wrapper {
+		flex: 1 0;
+	}
 
 	.main-content {
 		border: $outline-style-heavy;

@@ -36,7 +36,7 @@ const App = () => {
 			<Switch>
 				<Route path="/" exact>
 					<section className="app-container">
-						<main>
+						<main className="main-content-wrapper">
 							<Hero />
 							<div className="main-content">
 								<Toolbar />

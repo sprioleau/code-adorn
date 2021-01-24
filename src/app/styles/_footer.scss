@@ -1,5 +1,6 @@
 .footer {
 	@include center;
+	flex: 0 1;
 	flex-direction: column;
 
 	&__footer-links {

@@ -1,6 +1,7 @@
 .code-editor-wrapper {
 	.code-editor-window-ui {
 		display: flex;
+		justify-content: center;
 		overflow-x: scroll;
 
 		.code-editor-container {
@@ -74,6 +75,29 @@
 		.CodeMirror-code,
 		.CodeMirror-cursor {
 			margin-left: 11px;
+		}
+	}
+}
+
+@include sm {
+	.code-editor-wrapper {
+		.code-editor-window-ui {
+			.code-editor-container {
+				padding: 1.5rem;
+			}
+		}
+
+		.window-controls {
+			top: 2.25rem;
+			left: 2.25rem;
+		}
+	}
+}
+
+@include xsm {
+	.code-editor-wrapper {
+		.code-editor-window-ui {
+			justify-content: unset;
 		}
 	}
 }
