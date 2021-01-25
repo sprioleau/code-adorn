@@ -3,6 +3,12 @@
 	z-index: 20;
 
 	&__list-wrapper {
+		display: none;
+
+		&.open {
+			display: block;
+		}
+
 		&::before {
 			content: "";
 			position: absolute;

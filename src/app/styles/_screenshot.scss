@@ -1,14 +1,26 @@
-.button-wrapper {
+.screenshot {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	height: 100vh;
-	width: 100%;
-	display: grid;
-	place-items: center;
 
-	a::after {
-		display: none;
+	&__image {
+		flex: 0 0;
+		margin-bottom: 2rem;
 	}
 
-	.icon.arrow-icon {
-		margin-right: 0.75rem;
+	&__button-wrapper {
+		@include center;
+		flex: 1 0;
+		width: 100%;
+		margin-bottom: 4rem;
+
+		a::after {
+			display: none;
+		}
+
+		.icon.arrow-icon {
+			margin-right: 0.75rem;
+		}
 	}
 }

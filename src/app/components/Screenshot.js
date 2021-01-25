@@ -5,19 +5,17 @@ import { useSelector } from "react-redux";
 const Screenshot = () => {
 	const url = useSelector((state) => state.screenshotUrl);
 	return (
-		<>
-			{url ? (
-				<img src={url} alt="code-adorn-screenshot" width="100%" />
-			) : (
-				<div className="button-wrapper">
-					<Link to="/">
-						<button className="btn">
-							<span className="icon arrow-icon">⬅️</span>Go back home
-						</button>
-					</Link>
-				</div>
-			)}
-		</>
+		<div className="screenshot">
+			{url && <img src={url} className="screenshot__image" alt="code-adorn-screenshot" width="100%" />}
+			<div className="screenshot__button-wrapper">
+				<Link to="/">
+					<button className="btn">
+						<span className="icon arrow-icon">⬅️</span>
+						{url ? "Create another" : "Go back home"}
+					</button>
+				</Link>
+			</div>
+		</div>
 	);
 };
 
