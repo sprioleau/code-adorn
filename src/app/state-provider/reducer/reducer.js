@@ -7,12 +7,12 @@ const DEFAULT_LANGUAGE = randomItemFromArray(Object.keys(codeSnippets));
 const initialState = {
 	codeString: randomItemFromArray(codeSnippets[DEFAULT_LANGUAGE]),
 	language: DEFAULT_LANGUAGE,
-	languageDropdownOpen: false,
 	theme: "material",
-	themeDropdownOpen: false,
 	lineNumbersVisible: false,
 	screenshotBg: { hex: "#ffcd31" },
 	screenshotDataUrl: "/",
+	languageDropdownOpen: false,
+	themeDropdownOpen: false,
 	colorPickerOpen: false,
 	stylePickerOpen: false,
 	presetsPickerOpen: false,
@@ -44,6 +44,10 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				languageDropdownOpen: !state.languageDropdownOpen,
+				themeDropdownOpen: false,
+				colorPickerOpen: false,
+				stylePickerOpen: false,
+				presetsPickerOpen: false,
 			};
 
 		case types.UPDATE_THEME:
@@ -51,12 +55,20 @@ const reducer = (state = initialState, action) => {
 				...state,
 				theme: action.theme,
 				themeDropdownOpen: false,
+				languageDropdownOpen: false,
+				colorPickerOpen: false,
+				stylePickerOpen: false,
+				presetsPickerOpen: false,
 			};
 
 		case types.TOGGLE_THEME_DROPDOWN:
 			return {
 				...state,
 				themeDropdownOpen: !state.themeDropdownOpen,
+				languageDropdownOpen: false,
+				colorPickerOpen: false,
+				stylePickerOpen: false,
+				presetsPickerOpen: false,
 			};
 
 		case types.TOGGLE_LINE_NUMBERS_VISIBILITY:
@@ -82,12 +94,19 @@ const reducer = (state = initialState, action) => {
 				...state,
 				colorPickerOpen: !state.colorPickerOpen,
 				presetsPickerOpen: false,
+				languageDropdownOpen: false,
+				themeDropdownOpen: false,
+				stylePickerOpen: false,
 			};
 
 		case types.TOGGLE_STYLE_PICKER:
 			return {
 				...state,
 				stylePickerOpen: !state.stylePickerOpen,
+				languageDropdownOpen: false,
+				themeDropdownOpen: false,
+				colorPickerOpen: false,
+				presetsPickerOpen: false,
 			};
 
 		case types.TOGGLE_PRESETS_PICKER:
@@ -95,6 +114,9 @@ const reducer = (state = initialState, action) => {
 				...state,
 				presetsPickerOpen: !state.presetsPickerOpen,
 				colorPickerOpen: false,
+				languageDropdownOpen: false,
+				themeDropdownOpen: false,
+				stylePickerOpen: false,
 			};
 
 		default:
