@@ -11,7 +11,7 @@
 	"keywords": [
 		"Syntax highlight",
 		"code",
-		"cobalt",
+		"carbon",
 		"screenshot",
 		"pretty"
 	],
@@ -62,7 +62,6 @@
 		]
 	},
 	"devDependencies": {
-		"node-sass": "4.14.1"
-	},
-	"proxy": "http://localhost:5000"
+		"sass": "^1.49.7"
+	}
 }
