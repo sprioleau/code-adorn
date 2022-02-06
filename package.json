@@ -1,7 +1,22 @@
 {
-	"name": "code-adorn",
+	"name": "@sprioleau/code-adorn",
 	"version": "0.1.0",
 	"private": true,
+	"description": "Code Adorn makes it easy to download beautiful images of your code snippets.",
+	"author": "San'Quan Prioleau <sq.prioleau@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sprioleau/code-adorn.git"
+	},
+	"keywords": [
+		"Syntax highlight",
+		"code",
+		"cobalt",
+		"screenshot",
+		"pretty"
+	],
+	"contributors": [],
+	"homepage": "https://code-adorn.netlify.app",
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.11.4",
 		"@testing-library/react": "^11.1.0",
