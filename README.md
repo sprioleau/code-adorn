@@ -14,8 +14,6 @@ Make your code beautiful. This project incorporates options for a user to select
 
 ![Homepage Screenshot][homepage-screenshot-url] 
 
-![Color Page Screenshot][color-page-screenshot-url] 
-
 _Screenshots via [Pretty Page](https://prettypage.vercel.app/)_
 
 ## 💿 Installation
