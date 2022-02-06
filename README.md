@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+![Social Card][social-card-url]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/eda7977a-47da-4b02-ad04-f0b455b288bc/deploy-status)](https://app.netlify.com/sites/code-adorn/deploys)
 
-## Available Scripts
+# Code Adorn - A [Carbon](https://carbon.now.sh) clone
 
-In the project directory, you can run:
+Make your code beautiful. This project incorporates options for a user to select their language, syntax highlighting color scheme, and background color. Just type directly into the code window, select your language and see your in all its glory.
 
-### `yarn start`
+## 🔗 Links
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 🚀 Deployed at [code-adorn.netlify.app][deployed-url]
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Screenshots
 
-### `yarn test`
+![Homepage Screenshot][homepage-screenshot-url] 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Color Page Screenshot][color-page-screenshot-url] 
 
-### `yarn build`
+_Screenshots via [Pretty Page](https://prettypage.vercel.app/)_
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 💿 Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone this repo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/sprioleau/code-adorn.git
+```
 
-### `yarn eject`
+Install via npm
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+yarn install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run developemnt server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🛠 Built With
 
-## Learn More
+| Technology            | Used For                          |
+| :-------------------- | :-------------------------------- |
+| JavaScript            | -                                 |
+| React                 | Single-page application framework |
+| Redux                 | State management                  |
+| Netlify               | Hosting                           |
+| CodeMirror            | Editable code area                |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## ✨ Features
+- [x] Syntax highlighting for select languages
+- [x] Language, theme, color and preset selectors
+- [x] Custom icons
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## ⬆️ Future Updates
 
-### Code Splitting
+- [ ] Update library for handling image download on mobile browsers
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 👨🏾‍💻 Author
 
-### Analyzing the Bundle Size
+**San'Quan Prioleau**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Profile][github-url]
+- [Website][website]
+- [LinkedIn][linkedin]
 
-### Making a Progressive Web App
+## 🎗 Support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Issues, and feature requests are welcome!
 
-### Advanced Configuration
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgements
 
-### Deployment
+- Inspired by [carbon.now.sh](https://carbon.now.sh)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<!-- Author Details -->
+[github-url]: https://github.com/spriolau "San'Quan Prioleau on Github"
+[website]: https://sprioleau.dev "San'Quan Prioleau's personal website"
+[linkedin]: https://www.linkedin.com/in/sanquanprioleau/
+[headshot_url]: https://avatars.githubusercontent.com/u/49278940?v=4 "San'Quan Prioleau headshot"
 
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- Project Details -->
+[deployed-url]: https://code-adorn.netlify.app
+[social-card-url]: https://code-adorn.netlify.app/images/social-card.png "Social Card"
+[homepage-screenshot-url]: https://code-adorn.netlify.app/images/homepage.png "Homepage Screenshot"
